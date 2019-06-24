@@ -1,15 +1,22 @@
 //initiate variables
-let newDiv, newButton, newQuery; 
+let newDiv, newButton, newQuery, newImg; 
 
 //make display box
 newDiv = makeElem('div', '#display', '0');
 document.body.appendChild(newDiv);
-const display = document.querySelector('#display')
+const display = document.querySelector('#display');
 
-//make rows for calculator
+
+//make rows for numbers
+for (let i = 1; i < 5; i++){
+    newDiv = makeElem('div', '#numRow' + i);
+    document.querySelector('#numpad').appendChild(newDiv);
+}
+
+//make rows for calculator operators and functions
 for (let i = 1; i < 6; i++){
     newDiv = makeElem('div', '#row' + i);
-    document.body.appendChild(newDiv);
+    document.querySelector('#calculator').appendChild(newDiv);
 }
 
 //add buttons to rows
@@ -17,11 +24,11 @@ let count = 9;
 for (let i = 1; i < 5; i ++){
     if (i === 4){
         newButton = makeElem('button', '.button', '0');
-        document.querySelector('#row4').appendChild(newButton);
+        document.querySelector('#numRow4').appendChild(newButton);
         newButton = makeElem('button', '.button', '00');
-        document.querySelector('#row4').appendChild(newButton);
+        document.querySelector('#numRow4').appendChild(newButton);
         newButton = makeElem('button', '#decimal', '.');
-        document.querySelector('#row4').appendChild(newButton);
+        document.querySelector('#numRow4').appendChild(newButton);
         newButton = makeElem('button', '.buttonOperator', '+');
         document.querySelector('#row4').appendChild(newButton);
         newButton = makeElem('button', '.buttonFunc', 'Withdraw Cash');
@@ -29,7 +36,7 @@ for (let i = 1; i < 5; i ++){
     } else {
         for (let j = 1; j < 4; j++, count--){
             newButton = makeElem('button', '.button', count);
-            document.querySelector('#row' + i).prepend(newButton);
+            document.querySelector('#numRow' + i).prepend(newButton);
         }
         if (i === 1){
             newButton = makeElem('button', '.buttonOperator', '÷');
@@ -76,6 +83,7 @@ newQuery.addEventListener('click', function(){
     } else {
         display.innerHTML = display.textContent;
     }
+    console.log(calculatorModule.getTotal());
 })
 
 //number button event listeners

@@ -1,0 +1,55 @@
+h1 {
+    font-size: 5vw;
+}
+
+.button {
+    position: relative;
+    margin: 1px;
+    width: 5.1vw;
+    height: 4.1vw;
+    padding: 1vw 1vw;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 9px #999;
+    z-index: 1;
+}
+
+.button:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+#calculator {
+    background-color: grey;
+    width: 100%;  
+    height: 100%;
+}
+
+#cashRegisterImg {
+    width: 100%;
+}
+
+#decimal {
+    position: relative;
+    margin: 1px;
+    width: 5.1vw;
+    height: 4.1vw;
+    padding: 1vw 1vw;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 9px #999;
+    z-index: 1;
+}
+
+#equals {
+    width: 75%;
+}
+
+#numpad {
+    float: top;
+    position: absolute;
+    width: 25vw;
+    height: 50vw;
+    top: 43vw;
+    left: 36vw;
+}
