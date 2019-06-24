@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'digital';
+    src: url('../assests/fonts/digital/digital-7.ttf');
+}
+
 h1 {
     font-size: 5vw;
 }
@@ -17,7 +22,58 @@ h1 {
 .button:active {
     box-shadow: 0 5px #666;
     transform: translateY(4px);
-  }
+}
+
+.buttonEtc {
+    position: relative;
+    margin: 1px;
+    width: 5.1vw;
+    height: 4.1vw;
+    padding: 1vw 1vw;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 9px #999;
+    z-index: 1;
+}
+
+.buttonEtc:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.buttonFunc {
+    position: relative;
+    margin: 1px;
+    width: 15vw;
+    height: 4.1vw;
+    padding: 1vw 1vw;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 9px #999;
+    z-index: 1;
+}
+
+.buttonFunc:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.buttonOperator {
+    position: relative;
+    margin: 1px;
+    width: 5.1vw;
+    height: 4.1vw;
+    padding: 1vw 1vw;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 9px #999;
+    z-index: 1;
+}
+
+.buttonOperator:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
 
 #calculator {
     background-color: grey;
@@ -27,6 +83,16 @@ h1 {
 
 #cashRegisterImg {
     width: 100%;
+}
+
+#clearButton {
+    width: 10.5vw;
+}
+
+#clearEtc {
+    position: absolute;
+    top: 43vw;
+    left: 23vw;
 }
 
 #decimal {
@@ -41,15 +107,26 @@ h1 {
     z-index: 1;
 }
 
-#equals {
-    width: 75%;
+#display {
+    position: absolute;
+    width: 30vw;
+    text-align: center;
+    font-size: 3vw;
+    font-family: 'digital';
+    left: 47vw;
+    top: 31.8vw;
 }
 
 #numpad {
-    float: top;
     position: absolute;
-    width: 25vw;
-    height: 50vw;
     top: 43vw;
     left: 36vw;
+}
+
+#operatorsFuncs {
+    position: absolute;
+    top: 43vw;
+    left: 54.8vw;
+    width: 21vw;
+    
 }

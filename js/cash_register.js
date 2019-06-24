@@ -14,11 +14,40 @@ for (let i = 1; i < 5; i++){
 }
 
 //make rows for calculator operators and functions
-for (let i = 1; i < 6; i++){
+for (let i = 1; i < 5; i++){
     newDiv = makeElem('div', '#row' + i);
-    document.querySelector('#calculator').appendChild(newDiv);
+    document.querySelector('#operatorsFuncs').appendChild(newDiv);
 }
 
+//make rows for clear/etc buttons
+for (let i = 1; i < 5; i++){
+    newDiv = makeElem('div', '#etcRow' + i);
+    document.querySelector('#clearEtc').appendChild(newDiv);
+}
+//add clear/etc buttons
+newQuery = document.querySelector('#clearEtc').children;
+for (let i = 0, n = newQuery.length; i < n; i++){
+    if (i === 0){
+        newButton = makeElem('button', '.buttonEtc', 'a');
+        document.querySelector('#etcRow' + (i + 1)).appendChild(newButton);
+        newButton = makeElem('button', '.buttonEtc', 'b');
+        document.querySelector('#etcRow' + (i + 1)).appendChild(newButton);
+    } else if (i === 1){
+        newButton = makeElem('button', '.buttonEtc', 'c');
+        document.querySelector('#etcRow' + (i + 1)).appendChild(newButton);
+        newButton = makeElem('button', '.buttonEtc', 'd');
+        document.querySelector('#etcRow' + (i + 1)).appendChild(newButton);
+    } else if (i === 2){
+        newButton = makeElem('button', '.buttonEtc', 'e');
+        document.querySelector('#etcRow' + (i + 1)).appendChild(newButton);
+        newButton = makeElem('button', '.buttonEtc', 'f');
+        document.querySelector('#etcRow' + (i + 1)).appendChild(newButton);
+    } else {
+        newButton = makeElem('button', '.buttonEtc', 'Clear');
+        newButton.id = 'clearButton';
+        document.querySelector('#etcRow' + (i + 1)).appendChild(newButton);
+    }
+}
 //add buttons to rows
 let count = 9;
 for (let i = 1; i < 5; i ++){
@@ -31,7 +60,8 @@ for (let i = 1; i < 5; i ++){
         document.querySelector('#numRow4').appendChild(newButton);
         newButton = makeElem('button', '.buttonOperator', '+');
         document.querySelector('#row4').appendChild(newButton);
-        newButton = makeElem('button', '.buttonFunc', 'Withdraw Cash');
+        newButton = makeElem('button', '#equals', '=');
+        newButton.className = 'buttonFunc'
         document.querySelector('#row4').appendChild(newButton);
     } else {
         for (let j = 1; j < 4; j++, count--){
@@ -41,25 +71,21 @@ for (let i = 1; i < 5; i ++){
         if (i === 1){
             newButton = makeElem('button', '.buttonOperator', '÷');
             document.querySelector('#row' + i).appendChild(newButton);
-            newButton = makeElem('button', '.buttonFunc', 'Clear');
+            newButton = makeElem('button', '.buttonFunc', 'Get Balance');
             document.querySelector('#row' + i).appendChild(newButton);
         } else if (i === 2){
             newButton = makeElem('button', '.buttonOperator', 'x');
             document.querySelector('#row' + i).appendChild(newButton);
-            newButton = makeElem('button', '.buttonFunc', 'Get Balance');
+            newButton = makeElem('button', '.buttonFunc', 'Deposit Cash');
             document.querySelector('#row' + i).appendChild(newButton);
         } else if (i === 3){
             newButton = makeElem('button', '.buttonOperator', '-');
             document.querySelector('#row' + i).appendChild(newButton);
-            newButton = makeElem('button', '.buttonFunc', 'Deposit Cash');
+            newButton = makeElem('button', '.buttonFunc', 'Withdraw Cash');
             document.querySelector('#row' + i).appendChild(newButton);
         }
     }
 }
-
-//add equals button
-newButton = makeElem('button', '#equals', '=');
-document.querySelector('#row5').appendChild(newButton);
 
 //make element function
 function makeElem(elem, label, info){
@@ -127,31 +153,34 @@ newQuery.addEventListener('click', function(){
     }
 })
 
-//clear button event listener
+//buttonFunc event listener
 newQuery = document.querySelectorAll('.buttonFunc');
-newQuery[0].addEventListener('click', function(){
-    calculatorModule.clear();
-    display.innerHTML = '0';
-})
 
 //get balance event listener
-newQuery[1].addEventListener('click', function(){
+newQuery[0].addEventListener('click', function(){
     display.innerHTML = calculatorModule.recallMemory().toFixed(2);
 })
 
 //deposit event listener
-newQuery[2].addEventListener('click', function(){
+newQuery[1].addEventListener('click', function(){
     calculatorModule.saveMemory('a');
     display.innerHTML = '0';
 })
 
 //withdraw event listener
-newQuery[3].addEventListener('click', function(){
+newQuery[2].addEventListener('click', function(){
     if (calculatorModule.recallMemory() - parseFloat(display.textContent) > 0){
         calculatorModule.load(calculatorModule.recallMemory() - parseFloat(display.textContent));
         calculatorModule.saveMemory('w');
         display.innerHTML = '0';
     } else {
-        display.innerHTML = 'Not enough money.';
+        display.innerHTML = 'Not enough money';
     }
+})
+
+//clear button event listener
+newQuery = document.querySelector('#clearButton');
+newQuery.addEventListener('click', function(){
+    calculatorModule.clear();
+    display.innerHTML = '0';
 })
