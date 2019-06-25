@@ -1,64 +1,77 @@
+body {
+    margin: 0;
+}
+
 h1 {
     font-size: 5vw;
+    text-align: center;
+}
+
+html {
+    background: url('../assests/liquorstore.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
 .button {
     position: relative;
     margin: 1px;
-    width: 5.1vw;
-    height: 4.1vw;
-    padding: 1vw 1vw;
+    width: 2vw;
+    height: 1.5vw;
+    padding: 0;
     border-radius: 15px;
     border: none;
     box-shadow: 0 9px #999;
     z-index: 1;
+    font-size: 0.75vw;
 }
 
 .button:active {
-    box-shadow: 0 5px #666;
+    box-shadow: 0 3px #666;
     transform: translateY(4px);
 }
 
 .buttonEtc {
     position: relative;
     margin: 1px;
-    width: 5.1vw;
-    height: 4.1vw;
-    padding: 1vw 1vw;
+    width: 2vw;
+    height: 1.5vw;
+    padding: 0;
     border-radius: 15px;
     border: none;
     box-shadow: 0 9px #999;
     z-index: 1;
+    font-size: 0.75vw;
 }
 
 .buttonEtc:active {
-    box-shadow: 0 5px #666;
+    box-shadow: 0 1px #666;
     transform: translateY(4px);
 }
 
 .buttonFunc {
     position: relative;
     margin: 1px;
-    width: 15vw;
-    height: 4.1vw;
-    padding: 1vw 1vw;
+    width: 6vw;
+    height: 1.5vw;
+    padding: 0;
     border-radius: 15px;
     border: none;
     box-shadow: 0 9px #999;
     z-index: 1;
+    font-size: 0.75vw;
 }
 
 .buttonFunc:active {
-    box-shadow: 0 5px #666;
+    box-shadow: 0 53x #666;
     transform: translateY(4px);
 }
 
 .buttonOperator {
     position: relative;
     margin: 1px;
-    width: 5.1vw;
-    height: 4.1vw;
-    padding: 1vw 1vw;
+    width: 2vw;
+    height: 1.5vw;
+    padding: 0;
     border-radius: 15px;
     border: none;
     box-shadow: 0 9px #999;
@@ -66,36 +79,52 @@ h1 {
 }
 
 .buttonOperator:active {
-    box-shadow: 0 5px #666;
+    box-shadow: 0 3px #666;
     transform: translateY(4px);
 }
 
 #calculator {
-    background-color: grey;
-    width: 100%;  
-    height: 100%;
+    position: absolute;
+    bottom: 0;
+    width: 63.7vw;  
+    height: 50vw;
+    padding-bottom: 0vw;
+    padding-left: 18vw;
+    padding-right: 18.3vw;
+    padding-bottom: 0;
+    margin-bottom: 20vw;;
+    margin: 0;
+    border: 0;
+}
+
+#calculator img {
+    position: absolute;
+    top: 10vw;
+    left: 29vw;
+    height: 40vw;
+    width: 40vw;
 }
 
 #cashRegisterImg {
-    width: 100%;
+    width: 63.7vw;
 }
 
 #clearButton {
-    width: 10.5vw;
+    width: 4vw;
 }
 
 #clearEtc {
     position: absolute;
-    top: 43vw;
-    left: 23vw;
+    top: 22.5vw;
+    left: 38vw;
 }
 
 #decimal {
     position: relative;
     margin: 1px;
-    width: 5.1vw;
-    height: 4.1vw;
-    padding: 1vw 1vw;
+    width: 2vw;
+    height: 1.5vw;
+    padding: 0;
     border-radius: 15px;
     border: none;
     box-shadow: 0 9px #999;
@@ -106,22 +135,22 @@ h1 {
     position: absolute;
     width: 30vw;
     text-align: center;
-    font-size: 3vw;
+    font-size: 1.75vw;
     font-family: 'digital';
-    left: 47vw;
-    top: 31.8vw;
+    left: 39vw;
+    top: 20.6vw;
 }
 
 #numpad {
     position: absolute;
-    top: 43vw;
-    left: 36vw;
+    top: 22.5vw;
+    left: 43.6vw;
 }
 
 #operatorsFuncs {
     position: absolute;
-    top: 43vw;
-    left: 54.8vw;
+    top: 22.5vw;
+    left: 51.2vw;
     width: 21vw;
     
 }
