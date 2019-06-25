@@ -3,7 +3,7 @@ let newDiv, newButton, newQuery, newImg;
 
 //make display box
 newDiv = makeElem('div', '#display', '0');
-document.body.appendChild(newDiv);
+document.querySelector('#calculator').appendChild(newDiv);
 const display = document.querySelector('#display');
 
 
@@ -109,7 +109,6 @@ newQuery.addEventListener('click', function(){
     } else {
         display.innerHTML = display.textContent;
     }
-    console.log(calculatorModule.getTotal());
 })
 
 //number button event listeners
@@ -131,7 +130,23 @@ for (let i = 0, n = newQuery.length; i < n; i++){
 newQuery = document.querySelectorAll('.buttonOperator');
 for (let i = 0, n = newQuery.length; i < n; i++){
     newQuery[i].addEventListener('click', function(){
-        display.innerHTML = this.textContent + ' ';
+        if (!display.textContent.includes(this.textContent)){
+            display.innerHTML = this.textContent + ' ';
+        } else {
+            if (display.innerHTML[0] === '÷'){
+                calculatorModule.divide(parseFloat(display.textContent.slice(2)));
+                display.innerHTML = calculatorModule.getTotal().toFixed(2);
+            } else if (display.innerHTML[0] === '+'){
+                calculatorModule.add(parseFloat(display.textContent.slice(2)));
+                display.innerHTML = calculatorModule.getTotal().toFixed(2);
+            } else if (display.innerHTML[0] === '-'){
+                calculatorModule.subtract(parseFloat(display.textContent.slice(2)));
+                display.innerHTML = calculatorModule.getTotal().toFixed(2);
+            } else if (display.innerHTML[0] === 'x'){
+                calculatorModule.multiply(parseFloat(display.textContent.slice(2)));
+                display.innerHTML = calculatorModule.getTotal().toFixed(2);
+            }
+        }
     })
 }
 
@@ -163,7 +178,7 @@ newQuery[0].addEventListener('click', function(){
 
 //deposit event listener
 newQuery[1].addEventListener('click', function(){
-    calculatorModule.saveMemory('a');
+    calculatorModule.saveMemory('d');
     display.innerHTML = '0';
 })
 

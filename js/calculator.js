@@ -62,7 +62,7 @@ var calculatorModule = (function(){
     calculator.saveMemory = function(x){
         if(x === 'w'){
             memory = total;
-        } else if (x === 'a'){
+        } else if (x === 'd'){
             memory += total;
         }
     }
