@@ -57,6 +57,7 @@ for (let i = 1; i < 5; i ++){
         newButton = makeElem('button', '.button', '00');
         document.querySelector('#numRow4').appendChild(newButton);
         newButton = makeElem('button', '#decimal', '.');
+        newButton.className = 'button';
         document.querySelector('#numRow4').appendChild(newButton);
         newButton = makeElem('button', '.buttonOperator', '+');
         document.querySelector('#row4').appendChild(newButton);
@@ -113,10 +114,12 @@ newQuery.addEventListener('click', function(){
 
 //number button event listeners
 newQuery = document.querySelectorAll('.button');
-for (let i = 0, n = newQuery.length; i < n; i++){
+for (let i = 0, n = newQuery.length - 1; i < n; i++){
     newQuery[i].addEventListener('click', function(){
         if (display.textContent === '0') {
             display.innerHTML = this.textContent;
+        } else if (display.textContent.length === 16){
+            display.textContent = display.textContent;
         } else {
             display.innerHTML = display.textContent + this.textContent;
         }
@@ -135,16 +138,16 @@ for (let i = 0, n = newQuery.length; i < n; i++){
         } else {
             if (display.innerHTML[0] === '÷'){
                 calculatorModule.divide(parseFloat(display.textContent.slice(2)));
-                display.innerHTML = calculatorModule.getTotal().toFixed(2);
+                display.innerHTML = this.textContent + ' ';
             } else if (display.innerHTML[0] === '+'){
                 calculatorModule.add(parseFloat(display.textContent.slice(2)));
-                display.innerHTML = calculatorModule.getTotal().toFixed(2);
+                display.innerHTML = this.textContent + ' ';
             } else if (display.innerHTML[0] === '-'){
                 calculatorModule.subtract(parseFloat(display.textContent.slice(2)));
-                display.innerHTML = calculatorModule.getTotal().toFixed(2);
+                display.innerHTML = this.textContent + ' ';
             } else if (display.innerHTML[0] === 'x'){
                 calculatorModule.multiply(parseFloat(display.textContent.slice(2)));
-                display.innerHTML = calculatorModule.getTotal().toFixed(2);
+                display.innerHTML = this.textContent + ' ';
             }
         }
     })

@@ -1,39 +1,167 @@
-/* @media only screen and (min-width: 1025px) and (max-width: 1280px){
+@media only screen /*and (min-width: 1025px)*/ and (max-width: 1280px){
     #calculator {
-        size: 70vw;
-        height: 10vw;
+        margin-left: 15% !important;
     }
-    #calculator img {
-        height: 10vw;
+    /* #operatorsFuncs {
+        left: 0 !important;
+        right: auto;
+        width: 100% !important;
+    } */
+}
+
+@media only screen and (max-width: 992px) {
+    #calculator {
+        margin-left: 10% !important;
     }
-} */
+}
+
+@media only screen and (max-width: 768px) {
+    #calculator {
+        margin-left: 10% !important;
+        max-width: 600px;
+    }
+
+    #buttons {
+        right: 40px;
+        top: 33px;
+    }
+
+    .buttonEtc {
+        width: 30.2px !important;
+        height: 23px !important;
+    }
+
+    #clearButton {
+        width: 67px !important;
+    }
+
+    #numpad {
+        left: 258px !important;
+    }
+
+    .button {
+        width: 30.2px !important;
+        height: 23px !important;
+    }
+
+    .buttonOperator {
+        width: 30.2px !important;
+        height: 23px !important;
+    }
+
+    .buttonFunc {
+        width: 95px !important;
+        height: 22px !important;
+        font-size: 10px !important;
+    }
+
+    #operatorsFuncs {
+        left: 372px !important;
+    }
+
+    #display {
+        top: 205px !important;
+        left: 276px !important;
+        font-size: 20px !important;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #calculator {
+        max-height: 400px;
+        margin-left: 0 !important;
+        bottom: 1% !important;
+        max-width: 494px;
+    }
+
+    .buttonEtc {
+        width: 21px !important;
+        height: 12px !important;
+        bottom: 150px !important;
+        box-shadow: 0 4px #999 !important;
+        border-radius: 5px !important;
+    }
+
+    #clearButton {
+        width: 47px !important;
+        right: 3px !important;
+    }
+
+    #numpad {
+        top: 240px !important;
+        left: 229px !important;
+    }
+
+    .button {
+        width: 21px !important;
+        height: 12px !important;
+        bottom: 150px !important;
+        box-shadow: 0 4px #999 !important;
+        border-radius: 5px !important;
+    }
+
+    .buttonOperator {
+        width: 21px !important;
+        height: 12px !important;
+        bottom: 150px !important;
+        box-shadow: 0 4px #999 !important;
+        border-radius: 5px !important;
+        font-size: 10px !important;
+    }
+
+    .buttonFunc {
+        width: 63px !important;
+        height: 12px !important;
+        bottom: 150px !important;
+        box-shadow: 0 4px #999 !important;
+        border-radius: 5px !important;
+        font-size: 9px !important;
+    }
+
+    #operatorsFuncs {
+        left: 308px !important;
+    }
+
+    #display {
+        top: 78px !important;
+        left: 198px !important;
+        font-size: 12.5px !important;
+    }
+}
 
 
 body {
     margin: 0;
 }
 
-h1 {
-    font-size: 5vw;
-    text-align: center;
-}
-
 html {
     background: url('../assests/liquorstore.jpg') no-repeat center center fixed;
     background-size: cover;
+    overflow: hidden;
+    padding-bottom: 10px;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently*/
+}
+
+html::-webkit-scrollbar { 
+    width: 0 !important 
 }
 
 .button {
     position: relative;
     margin: 1px;
-    width: 2vw;
-    height: 1.5vw;
+    width: 40px;
+    height: 30px;
     padding: 0;
-    border-radius: 15px;
+    border-radius: 8px;
     border: none;
     box-shadow: 0 9px #999;
     z-index: 1;
-    font-size: 0.75vw;
+    font-size: 12px;
 }
 
 .button:active {
@@ -44,14 +172,14 @@ html {
 .buttonEtc {
     position: relative;
     margin: 1px;
-    width: 2vw;
-    height: 1.5vw;
+    width: 40px;
+    height: 30px;
     padding: 0;
-    border-radius: 15px;
+    border-radius: 8px;
     border: none;
     box-shadow: 0 9px #999;
     z-index: 1;
-    font-size: 0.75vw;
+    font-size: 12px;
 }
 
 .buttonEtc:active {
@@ -62,14 +190,15 @@ html {
 .buttonFunc {
     position: relative;
     margin: 1px;
-    width: 6vw;
-    height: 1.5vw;
+    width: 100%;
+    max-width: 120px;
+    height: 30px;
     padding: 0;
-    border-radius: 15px;
+    border-radius: 8px;
     border: none;
     box-shadow: 0 9px #999;
     z-index: 1;
-    font-size: 0.75vw;
+    font-size: 12px;
 }
 
 .buttonFunc:active {
@@ -80,10 +209,10 @@ html {
 .buttonOperator {
     position: relative;
     margin: 1px;
-    width: 2vw;
-    height: 1.5vw;
+    width: 45px;
+    height: 30px;
     padding: 0;
-    border-radius: 15px;
+    border-radius: 8px;
     border: none;
     box-shadow: 0 9px #999;
     z-index: 1;
@@ -94,79 +223,63 @@ html {
     transform: translateY(4px);
 }
 
+#buttons {
+    position: relative;
+    width: 1000px;
+    height: 100%;
+    display: flex;
+}
+
 #calculator {
+    background-image: url('../assests/cashResgister-removebg-Copy.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
     position: absolute;
-    bottom: 0;
-    width: 63.7vw;  
-    height: 50vw;
-    padding-bottom: 0vw;
-    padding-left: 18vw;
-    padding-right: 18.3vw;
-    padding-bottom: 0;
-    margin-bottom: 20vw;;
-    margin: 0;
-    border: 0;
-}
-
-#calculator img {
-    position: absolute;
-    top: 10vw;
-    left: 29vw;
-    height: 40vw;
-    width: 40vw;
-}
-
-#cashRegisterImg {
-    width: 63.7vw;
+    width: 775px;
+    height: 775px;
+    margin-bottom: 0;
+    margin-left: 30%;
+    margin-right: 30%;
+    /* margin-top: 250px; */
+    border-top: 100px;
+    bottom: 1px;
 }
 
 #clearButton {
-    width: 4vw;
+    width: 86px;
+    right: 5px;
 }
 
 #clearEtc {
     position: absolute;
-    top: 22.5vw;
-    left: 38vw;
-}
-
-#decimal {
-    position: relative;
-    margin: 1px;
-    width: 2vw;
-    height: 1.5vw;
-    padding: 0;
-    border-radius: 15px;
-    border: none;
-    box-shadow: 0 9px #999;
-    z-index: 1;
-}
-
-#decimal:active {
-    box-shadow: 0 3px #666;
-    transform: translateY(4px);
+    width: 200px;
+    top: 240px;
+    left: 175px;
 }
 
 #display {
     position: absolute;
-    width: 30vw;
+    width: 200px;
     text-align: center;
-    font-size: 1.25vw;
+    font-size: 24px;
     font-family: 'digital';
-    left: 39vw;
-    top: 18vw;
+    left: 385px;
+    top: 155px;
 }
 
 #numpad {
     position: absolute;
-    top: 22.5vw;
-    left: 43.6vw;
+    width: 200px;
+    top: 240px;
+    left: 279px;
+
 }
 
 #operatorsFuncs {
     position: absolute;
-    top: 22.5vw;
-    left: 51.2vw;
-    width: 21vw;
-    
+    width: 200px;
+    height: 20%;
+    top: 240px;
+    left: 427px;
 }
