@@ -1,12 +1,7 @@
-@media only screen /*and (min-width: 1025px)*/ and (max-width: 1280px){
+@media only screen and (max-width: 1280px){
     #calculator {
         margin-left: 15% !important;
     }
-    /* #operatorsFuncs {
-        left: 0 !important;
-        right: auto;
-        width: 100% !important;
-    } */
 }
 
 @media only screen and (max-width: 992px) {
@@ -265,7 +260,17 @@ html::-webkit-scrollbar {
     font-size: 24px;
     font-family: 'digital';
     left: 385px;
-    top: 155px;
+    top: 153px;
+}
+
+#etcRow1 {
+    position: relative;
+    left: 3px;
+}
+
+#etcRow2 {
+    position: relative;
+    left: 2px;
 }
 
 #numpad {
@@ -281,5 +286,20 @@ html::-webkit-scrollbar {
     width: 200px;
     height: 20%;
     top: 240px;
-    left: 427px;
+    left: 422px;
+}
+
+#row2 {
+    position: relative;
+    left: 3px;
+}
+
+#row3 {
+    position: relative;
+    left: 5px;
+}
+
+#row4 {
+    position: relative;
+    left: 7px;
 }
